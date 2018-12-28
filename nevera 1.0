@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+using namespace std;
+
+struct comida_tienda{
+    string alimento;
+    int stock;
+    double precio;
+};
+
+struct comida_nevera{
+    string alimento;
+    int stock, fcompra, fcaduc;
+};
+
+struct comida_pref{
+    string comida;
+    int MinStock;
+};
+
+struct nevera{
+    string usuario, contrasena;
+    int credito;
+    vector<comida_nevera> enlanevera;
+    vector<comida_pref> preferente;
+};
+
+struct tienda{
+    string direccion, horario;
+    vector<comida_tienda> stocktienda;
+};
+
+
+int main(){
+
+}
