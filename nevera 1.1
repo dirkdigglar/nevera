@@ -33,6 +33,7 @@ struct tienda{
 };
 
 void menuprincipal (int& N){
+    cout<<"-------------------------------------------------------" <<endl;
     cout<<"1. Usuario" <<endl
     <<"2. Ver comida que hay en la nevera" <<endl
     <<"3. Ver tienda" <<endl
@@ -40,7 +41,8 @@ void menuprincipal (int& N){
     cin>>N;
 }
 
-void menuusuario (){
+void menuusuario (int& N){
+    cout<<"--------------------------------------------------------" <<endl;
     cout<<"1. Administrar comida preferente" <<endl
     <<"2. Cambiar usuario" <<endl
     <<"3. Cambiar contrasena" <<endl
@@ -49,6 +51,7 @@ void menuusuario (){
 }
 
 void comidanevera (nevera X){
+    cout<<"-------------------------------------------------------" <<endl;
     cout<<"en la nevera hay" <<X.enlanevera.size() <<" alimentos: " <<endl;
     for(int i=0; i<X.enlanevera.size(); i++){
         cout<<"Alimento: " <<X.enlanevera[i].alimento
@@ -59,6 +62,7 @@ void comidanevera (nevera X){
 }
 
 void menupedido (){
+    cout<<"------------------------------------------------------" <<endl;
     cout<<"1. Horario de disponibilidad de la tienda" <<endl
     <<"2. Direccion de la tienda" <<endl
     <<"3. Ver tienda" <<endl
@@ -71,8 +75,10 @@ void sign_in (vector<nevera> listaneveras, nevera& A, int& indice, int N){
     <<"1. Entrar con mi cuenta" <<endl
     <<"2. Registrarme" <<endl
     <<"3. Salir del programa" <<endl;
+    cin>>N;
     switch (N){
         case 1:
+            cout<<"-----------------------------------------------" <<endl;
             cout<<"introduce el nombre de usuario: ";
             cin>>A.usuario;
             cout<<"introduce la constrasena: ";
@@ -84,6 +90,7 @@ void sign_in (vector<nevera> listaneveras, nevera& A, int& indice, int N){
             }
             break;
         case 2:
+            cout<<"----------------------------------------------" <<endl;
             cout<<"introduce el nombre de usuario: ";
             cin>>A.usuario;
             cout<<"introduce la constrasena: ";
@@ -106,6 +113,20 @@ int main(){
     }else{
         //si encuentra o se registra el usuario el programa continua aquí.
         menuprincipal(N);
+        switch (N){
+        case 1:
+            menuusuario(N);
+            break;
+        case 2:
+            comidanevera(A);
+            break;
+        case 3:
+            //comdia tienda.
+            break;
+        case 4:
+            return 0;
+            break;
+    }
     }
 
 
