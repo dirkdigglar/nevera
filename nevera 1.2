@@ -1,0 +1,224 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+using namespace std;
+
+struct comida_tienda{
+    string alimento, categoria;
+    int stock;
+    double precio;
+};
+
+struct comida_nevera{
+    string alimento;
+    int stock, fcompra, fcaduc;
+};
+
+struct comida_pref{
+    string comida;
+    int MinStock;
+};
+
+struct nevera{
+    string usuario, contrasena;
+    int credito;
+    vector<comida_nevera> enlanevera;
+    vector<comida_pref> preferente;
+};
+vector<nevera> listaneveras;
+
+struct tienda{
+    string direccion, horario;
+    vector<comida_tienda> stocktienda;
+};
+
+void escribircategorias (tienda X, int& N, int tindice);
+
+
+void menuprincipal (int& N){
+    cout<<"-------------------------------------------------------" <<endl;
+    cout<<"1. Usuario" <<endl
+    <<"2. Ver comida que hay en la nevera" <<endl
+    <<"3. Ver tienda" <<endl
+    <<"4. Salir" <<endl;
+    cin>>N;
+}
+
+void menuusuario (int& N){
+    cout<<"--------------------------------------------------------" <<endl;
+    cout<<"1. Administrar comida preferente" <<endl
+    <<"2. Cambiar usuario" <<endl
+    <<"3. Cambiar contrasena" <<endl
+    <<"4. Cambiar numerocuenta" <<endl
+    <<"5. Volver al menu principal" <<endl;
+}
+
+void comidanevera (nevera X){
+    cout<<"-------------------------------------------------------" <<endl;
+    cout<<"en la nevera hay" <<X.enlanevera.size() <<" alimentos: " <<endl;
+    for(int i=0; i<X.enlanevera.size(); i++){
+        cout<<"Alimento: " <<X.enlanevera[i].alimento
+        <<" Cantidad: " <<X.enlanevera[i].stock
+        <<" Fecha de compra: " <<X.enlanevera[i].fcompra //hay que mirar como mostramos la fecha. Si queremos que se muestre 21/12/12 hay que hacer cambios.
+        <<" Fecha de caducidad " <<X.enlanevera[i].fcaduc <<endl;
+    }
+}
+
+void menupedido (int& N, tienda X, int tindice){
+    cout<<"------------------------------------------------------" <<endl;
+    cout<<"Horario de disponibilidad de la tienda: " <<X.horario <<endl
+    <<"Direccion: " <<X.direccion <<endl;
+    cout<<"------------------------------------------------------" <<endl;
+    cout<<"1. Ver tienda" <<endl
+    <<"2. Volver al menu principal" <<endl;
+    switch (N){
+        case 1:
+            escribircategorias(X, N, tindice);
+            break;
+        case 2:
+            break;
+    }
+}
+
+void escribircategorias (tienda X, int& N, int& tindice){ //busca todas las categorias en el stock de la tienda y las imprime por pantalla
+                                    //para que el usuario pueda entrar más tarde en una de ellas y elegir algun producto.
+    vector<string> categoria;
+    bool encontrado;
+    categoria.push_back(X.stocktienda[0].categoria);
+    for(int i=1; i<X.stocktienda.size(); i++){
+        for(int k=0; k<i; i++){
+            if(X.stocktienda[k].categoria == X.stocktienda[i].categoria){
+                encontrado = true;
+            }
+        }
+        if(encontrado){
+            categoria.push_back(X.stocktienda[i].categoria);
+            encontrado = false;
+        }
+    }
+    for(int i=0; i<categoria.size(); i++){
+        cout<<i <<". " <<categoria[i] <<endl;
+    }
+    int x=1; //variable para que el usuario eliga que producto seleccionar.
+    for(int i=0; i<categoria.size(); i++){
+        for(int k=0; k<=X.stocktienda.size(); k++){ //mostrar todos los productos con la misma categoria.
+            if(X.stocktienda[k].categoria == categoria[i]){
+                cout<<x++ <<". " <<X.stocktienda[k].alimento <<endl;
+            }
+        }
+    }
+    cin>>tindice;
+}
+
+void compra (int tindice, int indice, vector<nevera>& listaneveras, tienda X){
+    int n=0, N;
+    cout<<"----------------------------------------------" <<endl;
+    cout<<X.stocktienda[tindice].alimento <<" " <<X.stocktienda[tindice].categoria
+    <<" " <<X.stocktienda[tindice].precio <<" " <<X.stocktienda[tindice].stock <<endl;
+    cout<<"1. Comprar" <<endl;
+    cout<<"2. Volver " <<endl;
+    cin>>N;
+    switch (N){
+        case 1:
+            cout<<"¿Cuantas unidades quieres comprar? ";
+            cin>>n;
+            //funcion de comprar
+            break;
+        case 2:
+            //volver a atrás.
+            break;
+    }
+}
+
+void sign_in (vector<nevera> listaneveras, nevera& A, int& indice, int N){
+    indice = -1; //si el programa no encuetra el usuario devuelve un -1 de indice.
+    cout<<"¿Qué quieres hacer? " <<endl
+    <<"1. Entrar con mi cuenta" <<endl
+    <<"2. Registrarme" <<endl
+    <<"3. Salir del programa" <<endl;
+    cin>>N;
+    switch (N){
+        case 1:
+            cout<<"-----------------------------------------------" <<endl;
+            cout<<"introduce el nombre de usuario: ";
+            cin>>A.usuario;
+            cout<<"introduce la constrasena: ";
+            cin>>A.contrasena;
+            for(int i=0; i<listaneveras.size(); i++){
+                if(A.usuario==listaneveras[i].usuario and A.contrasena==listaneveras[i].contrasena){
+                    indice=i; //sino encuetra la usuario no cambiará el indice.
+                }
+            }
+            break;
+        case 2:
+            cout<<"----------------------------------------------" <<endl;
+            cout<<"introduce el nombre de usuario: ";
+            cin>>A.usuario;
+            cout<<"introduce la constrasena: ";
+            cin>>A.contrasena;
+            listaneveras.push_back(A);
+            indice = listaneveras.size();
+            break;
+        case 3:
+            //mirar opcion para cerrar el programa desde un void. return 0 no sirve.
+            break;
+    }
+}
+
+int main(){
+    int N, indice, tindice; //indice para posicion del usuario y tindice para posicion de la tienda
+    nevera A;
+    tienda X;
+
+    sign_in(listaneveras, A, indice, N);
+    if(indice == -1){
+        sign_in(listaneveras, A, indice, N); //si no encutra nada, repite.
+    }else{
+        //si encuentra o se registra el usuario el programa continua aquí.
+        menuprincipal(N);
+        switch (N){
+        case 1:
+            menuusuario(N);
+            break;
+        case 2:
+            comidanevera(A);
+            break;
+        case 3:
+            //comdia tienda.
+            break;
+        case 4:
+            return 0;
+            break;
+    }
+    }
+
+
+   /*
+    switch (N){
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            return 0;
+            break;
+    }
+*/
+
+
+  /*  ifstream texto ("texto.txt");
+    if(texto.is_open()){
+        getline(texto, s);
+        //lee una linia y la mete en la variable s.
+    }
+    texto.close(); */
+
+    /*switch (N){
+        case 1:
+            break;
+        case 2:
+            break;
+    */
+}
