@@ -1,0 +1,133 @@
+COMIDATIENDA 
+Pera 50 0.5 03022019 Fruta
+Manzana 50 0.4 06022019 Fruta
+Platano 50 0.6 14022019 Fruta
+Uva 100 0.2 26022019 Fruta
+Fresa 50 0.5 03022019 Fruta
+Sandia 30 4.5 2032019 Fruta
+Melon 40 4.0 12022019 Fruta
+Ciruela 90 0.4 14012019 Fruta
+Kiwi 20 1.25 19022019 Fruta
+Mango 35 1.50 13032019 Fruta
+Aguacate 60 2.10 12042019 Fruta
+Melocoton 75 0.67 23022019 Fruta
+Limon 60 0.3 13032019 Fruta
+Granada 25 1.24 01022019 Fruta
+Lubina 23 40.16 13022019 Pescado
+Rodaballo 30 42 17022019 Pescado
+Lenguado 35 22.80 19022019 Pescado
+Rape_Blanco 16 57.80 15022019 Pescado
+Sargo_Gallego 40 10.63 22022019 Pescado
+Besugo 50 17.10 19012019 Pescado
+Salmonete_de_Roca 15 28.90 12012019 Pescado
+Caballa 43 8 11012019 Pescado
+Sardina 10 3.5 23012019 Pescado
+Escacho 15 20.08 03022019 Pescado
+Coruxo 10 32.73 15012019 Pescado
+Escamarlan 100 3.2 26012019 Pescado
+Gamba 50 3.7 27012019 Pescado
+Gamba_Roja 30 4.2 13012019 Pescado
+Cabeza_de_Rape 40 4 12012019 Pescado
+Filete_de_Ternera 60 9.75 11012019 Carne
+Solomillo_de_Ternera 50 8.58 100120119 Carne
+Carne_Picada_de_Ternera 55 7.45 23022019 Carne
+Pollo_entero 40 31.50 22022019 Carne
+Pechuga_de_Pollo 75 11.45 23022019  Carne
+Carne_Picada_de_Pollo 15 8.45 24022019 Carne
+Muslos_de_Pollo 60 14.90 08022019 Carne
+Carne_de_Cerdo_Picada 40 7.45 17022019 Carne
+Manitas_de_Cerdo 20 6.75 19022019 Carne
+Secreto_de_Cerdo 15 12.25 26022019 Carne
+Panceta_de_Cerdo 50 4.75 2822019 Carne
+Costilla_de_Cerdo 40 10.90 11022019 Carne
+Pechuga_de_Pavo 30 30.50 02022019 Carne
+Alas_de_Pavo 40 4.95 03032019 Carne
+Carne_de_Pavo_Picada 10 9.45 01032019 Carne
+Leche_semidesnatada 200 0.57 01012019 Lacteos
+Leche_entera 250 0.76 06022019 Lacteos
+Leche_desnatada 150 0.76 08022019 Lacteos
+Pack_leche_entera 20 3.42 10022019 Lacteos
+Pack_leche_semidesnatada 20 4.56 12022019 Lacteos
+Pack_leche_desnatada 15 5.04 14022019 Lacteos
+Yogur_Natural 60 2.14 16022019 Lacteos
+Yogur_Azucarado 50 1.43 18022019 Lacteos
+Yogur_sabor_Limon 60 1.35 2002219 Lacteos
+Actimel 40 1.05 22022019 Lacteos
+Queso_de_Cabra 10 20.05 24022019 Lacteos
+Queso_de_Obeja 15 25.06 24022019 Lacteos
+Lechuga 60 3.75 23022019 Verdura
+Pimiento_Rojo 50 1.07 01022019 Verdura
+Pimiento_Verde 50 1.07 02022019 Verdura
+Tomate 60 1.23 23022019 Verdura
+Col 65 3.05 24022019 Verdura
+Zanahoria 40 2.02 25022019 Verdura
+Ajo 160 0.03 26022019 Verdura
+Nabo 45 1.60 27022019 Verdura
+Puerro  60 1.40 27022019 Verdura
+Remolacha 90 0.90 27022019 Verdura
+Apio 110 1.00 10022019 Verdura
+Calabaza 30 4.60 30032019 Verdura
+Patata 230 0.30 23032019 Verdura
+Cebolla 90 1.00 23012019 Verdura
+Quinoa_1kg 20 3.00 26062020 Cereales
+Arroz_1kg 60 3.00 13062020 Cereales
+Avena_1kg 40 2.90 11052020 Cereales
+Maiz_1kg 45 1.90 10082019 Cereales
+Trigo_1kg 60 2.60 11092019 Cereales
+Cebada_1kg 55 3.60 23062019 Cereales
+Centeno_1kg 10 6.50 24082019 Cereales
+ChocoKrispis 70 3.50 2407209 Cereales
+Keloggs 40 3.20 26012023 Cereales
+Kellogs_SuperMario 20 9.00 26022023 Cereales
+Pan 90 1.00 0 Cereales
+Pasta 100 6.20 230032019 Cereales
+Agua_Garrafa 160 3.50 22022019 Bebidas
+Trina 60 1.39 26062019 Bebidas
+Fanta 170 1.27 25052019 Bebidas
+Sevenup 120 1.19 24042019 Bebidas
+Gaseosa 220 0.26 23032019 Bebidas
+Agua_1L 500 1.50 22022019 Bebidas
+Cerveza_0Alcohol 130 0.64 25032019 Bebidas
+Cocacola 900 0.60 12032019 Bebidas
+Aquarius 150 0.69 13062019 Bebidas
+Zumo_Naranja 120 0.53 23012019 Bebidas
+Zumo_Pera 120 0.53 21012019 Bebidas
+Zumo_Melocoton 120 0.53 22012019 Bebidas
+Zumo_Manzana 120 0.53 23012019 Bebidas
+EstrellaDAM 160 0.64 26022019 Alcohol
+Ambar 120 0.68 23032019 Alcohol
+EstrellaGalicia 120 0.80 25012019 Alcohol
+Vino_Tempranillo 90 3.50 0 Alcohol
+Vino_Viejo 20 9.50 0 Alcohol
+Whisky 30 8.85 0 Alcohol
+Ginebra 30 10.00 0 Alcohol
+Ron_Blanco 30 4.79 0 Alcohol
+Dry_Martini 10 12.60 0 Alcohol
+Pack_Mahou 40 5.46 0 Alcohol
+Anis 30 8.90 0 Alcohol
+Sangria 60 1.39 0 Alcohol
+NEVERAUSUARIO
+Manzana 5 03032019
+Agua_Garrafa 3 12042019
+EstrellaDAM 4 12012020
+Besugo 1 30012019
+Muslos_de_Pollo 6 02022019
+Platano 2 23012019
+Ginebra 1 03052022
+Zumo_Naranja 2 14032019
+Tomate 6 22012019
+Zanahoria 5 01022019
+Actimel 6 23012019
+Sandia 1 02022019
+Leche_semidesnatada 12 03022019
+Sardina 5 16022019
+Yogur_Natural 2 3 17012019
+Lenguado 1 15012019
+USUARIO
+admin
+admin
+12345678912345678912345
+carrer_direccion_calle
+
+
+
